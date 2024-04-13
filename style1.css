@@ -1,0 +1,44 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.gallery img {
+    width: 100px; /* Thumbnail size for larger screens */
+    height: auto;
+    transition: transform 0.2s; /* Smooth transform */
+    margin: 10px;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.expanded {
+    position: fixed; /* Overlay full screen */
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background: rgba(0,0,0,0.8); /* Dim the background */
+    cursor: zoom-out;
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 600px) { /* For small devices like smartphones */
+    .gallery img {
+        width: 50px; /* Smaller thumbnails for small screens */
+        margin: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery img {
+        width: 75px; /* Moderate size for tablets */
+    }
+}

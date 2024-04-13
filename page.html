@@ -2,47 +2,22 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style1.css">
     <title>Q-middag</title>
-    <script>
-        // Specify which QR code this is (from 1 to 4)
-        var qrCodeNumber = 1; // Change this for each QR code
-        
-        var tasksPerQRCode = {
-            '1': ['task_1.html', 'task_2.html', 'task_3.html', 'task_4.html'],
-            '2': ['task_2.html', 'task_3.html', 'task_4.html', 'task_1.html'],
-            '3': ['task_3.html', 'task_4.html', 'task_1.html', 'task_2.html'],
-            '4': ['task_4.html', 'task_1.html', 'task_2.html', 'task_3.html'],
-            '5': ['task_5.html', 'task_5.html', 'task_5.html', 'task_5.html'] // Last task for all teams
-        };
-
-        function redirectToTask(teamNumber) {
-            var password = prompt("Please enter your team's password:");
-
-            var correctPasswords = {
-                '1': '11',
-                '2': '22',
-                '3': '33',
-                '4': '44',
-                '5': '55'
-            };
-
-            if (password === correctPasswords[teamNumber]) {
-                // Correctly select the individual task URL
-                var taskPage = tasksPerQRCode[teamNumber][qrCodeNumber - 1];
-                window.location.href = taskPage;
-            } else {
-               alert("Nå har du glemt passordet ditt din ku, det var virkelig ikke så vanskelig");
-            }
-        }
-    </script>
+    
 </head>
 <body>
    <h1> Happy Q-middag!</h1>
    
-   Her står det mere fete ting som jeg har oppdatert siden forrige gang 
+   <h2></h2>Her er noen fine bilder av oss <3 </h2>
    
-    <button class="button" onclick="redirectToTask('1')">Lag 1</button>
+       <div class="gallery">
+        <img src="image/image1.jpg" alt="Image 1" onclick="expandImage(this);">
+        <img src="image/image2.jpg" alt="Image 2" onclick="expandImage(this);">
+        <img src="image/image3.jpg" alt="Image 3" onclick="expandImage(this);">
+        <img src="image/image4.jpg" alt="Image 4" onclick="expandImage(this);">
+    </div>
 
+<script src="script.js"></script>
 </body>
 </html>
